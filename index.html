@@ -4,28 +4,60 @@
   <meta charset="UTF-8" />
   <title>Crush Quiz</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
 
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: linear-gradient(135deg, #dbeafe, #eef2ff, #f8fafc);
-    min-height: 100vh;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #eef2ff, #f8fafc);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px; /* pour que ce soit pas collé aux bords */
+  box-sizing: border-box;
+}
+
+.box {
+  width: 100%;
+  max-width: 420px; /* reste la même sur grand écran */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 24px 16px; /* réduit légèrement pour mobile */
+  border-radius: 18px;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6px);
+  box-sizing: border-box;
+}
+
+  button {
+    font-family: "Inter", sans-serif;
+    width: 100%;
+    padding: 14px; /* un peu plus confortable pour le tactile */
+    margin-bottom: 12px;
+    font-size: 16px; /* légèrement plus grand pour lisibilité sur mobile */
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #e5e7eb, #f9fafb);
+    color: #1f2937;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.2s ease;
   }
 
-  .box {
-    width: 100%;
-    max-width: 420px;
-    background: rgba(255, 255, 255, 0.95);
-    padding: 28px 24px;
-    border-radius: 18px;
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(6px);
+ button:hover {
+  transform: translateY(-1px);
+  background: linear-gradient(135deg, #d1d5db, #f3f4f6);
+ }
+
+  #backArrow {
+    top: 12px;
+    left: 12px;
+    font-size: 24px; /* légèrement plus grand pour tactile */
   }
+
 
   h2 {
     font-size: 22px;
@@ -37,37 +69,6 @@
     font-size: 14px;
     color: #6b7280;
     margin-bottom: 24px;
-  }
-
-  #backArrow {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    font-size: 22px;
-    color: #334155;
-    user-select: none;
-    transition: color 0.2s ease;
-  }
-
-  #backArrow:hover {
-    color: #1d4ed8;
-  }  
-
-
-  button {
-    font-family: "Inter", sans-serif;
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 14px;
-    font-size: 15px;
-    font-weight: 500;
-    border: none;
-    border-radius: 14px;
-    background: linear-gradient(135deg, #e5e7eb, #f9fafb);
-    color: #1f2937;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-    transition: all 0.2s ease;
   }
 
   button:hover {
