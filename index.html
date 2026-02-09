@@ -53,9 +53,12 @@
  }
 
   #backArrow {
+    position: absolute;
     top: 12px;
     left: 12px;
-    font-size: 24px; /* légèrement plus grand pour tactile */
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 10;
   }
 
 
@@ -187,7 +190,6 @@
     </div>
 
     <div id="backArrow" style="display:none; cursor:pointer;">⬅️</div>
-    <h2 id="question"></h2>
 
     <h2 id="question"></h2>
     <p id="progress"></p>
@@ -522,18 +524,6 @@ function showResult() {
   progressEl.textContent = "";
   progressFill.style.width = "100%";
 
-
-q.answers.forEach(a => {
-  const btn = document.createElement("button");
-  btn.textContent = a.text
-    .replaceAll("{{subj}}", subj())
-    .replaceAll("{{subjm}}", subjm())
-    .replaceAll("{{poss}}", poss());
-
-  btn.onclick = () => handleAnswer(a.score);
-  btn.classList.add("fade");
-  answersEl.appendChild(btn);
-});
 
   const shareText = `J’ai fait le CrushQuiz 😳
 Résultat : ${result}
