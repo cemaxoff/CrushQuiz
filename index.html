@@ -23,14 +23,14 @@
 }
 
 /* Logo fixe en haut à gauche */
-#logo-crushquiz_rmvbg {
+#logo {
   position: fixed;      /* reste à l’écran même au scroll */
   top: 12px;
   left: 12px;
   z-index: 1000;        /* au-dessus du quiz */
 }
 
-#logo-crushquiz_rmvbg img {
+#logo img {
   display: block;
   width: 80px;          /* taille desktop */
   height: auto;
@@ -39,7 +39,7 @@
 
 /* Version mobile : réduit le logo si l’écran est petit */
 @media (max-width: 500px) {
-  #logo-crushquiz_rmvbg img {
+  #logo img {
     width: 60px;        /* plus petit sur mobile */
   }
 }
@@ -229,8 +229,8 @@
 </head>
 <body>
 
-<div id="logo-crushquiz_rmvbg" style="text-align:center; margin-bottom:20px;">
-  <img src="https://github.com/cemaxoff/CrushQuiz/images/logo-crushquiz_rmvbg.png" alt="Logo CrushQuiz" width="120">
+<div id="logo" style="text-align:center; margin-bottom:20px;">
+  <img src="https://cemaxoff.github.io/CrushQuiz/images/logo-crushquiz_rmvbg.png" alt="Logo CrushQuiz" width="120">
 </div>
 
 <!-- PUB GAUCHE -->
@@ -634,5 +634,3 @@ function restartQuiz() {
 
 </body>
 </html>
-
-
