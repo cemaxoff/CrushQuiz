@@ -6,6 +6,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="icon" type="image/jpeg" href="https://cemaxoff.github.io/CrushQuiz/images/favicon.png">
+
   <style>
 
   body {
@@ -18,6 +20,68 @@
   justify-content: center;
   padding: 10px; /* pour que ce soit pas collé aux bords */
   box-sizing: border-box;
+}
+
+/* Logo fixe en haut à gauche */
+#logo {
+  position: fixed;      /* reste à l’écran même au scroll */
+  top: 12px;
+  left: 12px;
+  z-index: 1000;        /* au-dessus du quiz */
+}
+
+#logo img {
+  display: block;
+  width: 80px;          /* taille desktop */
+  height: auto;
+  transition: width 0.2s ease;
+}
+
+/* Version mobile : réduit le logo si l’écran est petit */
+@media (max-width: 500px) {
+  #logo img {
+    width: 60px;        /* plus petit sur mobile */
+  }
+}
+
+.ad-left,
+.ad-right {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px; /* largeur pub latérale */
+  height: auto;
+  background: #222;
+  padding: 10px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.4);
+  z-index: 1000;
+}
+
+.ad-left img,
+.ad-right img {
+  border-radius: 12px;
+  transition: transform 0.3s ease;
+}
+
+.ad-left img:hover,
+.ad-right img:hover {
+  transform: scale(1.05);
+}
+
+.ad-left {
+  left: 0; /* à gauche */
+}
+
+.ad-right {
+  right: 0; /* à droite */
+}
+
+/* sur mobile on cache ces pubs */
+@media screen and (max-width: 768px) {
+  .ad-left,
+  .ad-right {
+    display: none;
+  }
 }
 
 .box {
@@ -164,6 +228,25 @@
 
 </head>
 <body>
+
+<div id="logo" style="text-align:center; margin-bottom:20px;">
+  <img src="https://cemaxoff.github.io/CrushQuiz/images/logo-crushquiz_rmvbg" alt="Logo CrushQuiz" width="120">
+</div>
+
+<!-- PUB GAUCHE -->
+<div class="ad-left">
+  <a href="https://cemaxoff.github.io/ValoMainQuiz/" target="_blank">
+    <img src="https://cemaxoff.github.io/ValoMainQuiz/images/pub_logo.png" width="160">
+  </a>
+</div>
+
+
+<!-- PUB DROITE -->
+<div class="ad-right">
+  <a href="https://cemaxoff.github.io/ValoMainQuiz/" target="_blank">
+    <img src="https://cemaxoff.github.io/ValoMainQuiz/images/pub_logo.png" width="160">
+  </a>
+</div>
 
 <div class="box" id="app">
 
