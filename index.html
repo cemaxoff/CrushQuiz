@@ -6,7 +6,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/png" href="https://cemaxoff.github.io/CrushQuiz/images/logo.png">
+<link rel="icon" type="image/jpeg" href="https://cemaxoff.github.io/CrushQuiz/images/logo.png">
 
   <style>
 
@@ -230,7 +230,7 @@
 <body>
 
 <div id="logo" style="text-align:center; margin-bottom:20px;">
-  <img src="https://cemaxoff.github.io/CrushQuiz/images/logo.png" alt="Logo CrushQuiz" width="120">
+  <img src="https://cemaxoff.github.io/CrushQuiz/logo.png" alt="Logo CrushQuiz" width="120">
 </div>
 
 <!-- PUB GAUCHE -->
@@ -338,6 +338,40 @@ const questions = [
       { text: "Oui, clairement", score: { love: 2 } },
       { text: "De temps en temps", score: { friend: 1 } },
       { text: "Non", score: { nothing: 2 } }
+    ]
+  },
+  {
+    question: "Quand vous discutez, est-ce qu'{{subj}} rit pour pas grand chose ?",
+    answers: [
+      { text: "Oui, clairement", score: { love: 2 } },
+      { text: "De temps en temps", score: { friend: 1 } },
+      { text: "Non", score: { nothing: 2 } }
+    ]
+  },
+   {
+    question: "Quand vous discutez, est-ce qu'{{subj}} rougit ?",
+    answers: [
+      { text: "Oui, clairement", score: { love: 2 } },
+      { text: "De temps en temps", score: { friend: 1 } },
+      { text: "Non", score: { nothing: 2 } }
+    ]
+  },
+   {
+    question: "Par message, est-ce qu'{{subj}} te répond vite ?",
+    answers: [
+      { text: "Oui, clairement", score: { love: 2 } },
+      { text: "De temps en temps", score: { friend: 1 } },
+      { text: "Non", score: { nothing: 2 } },
+      { text: "Je ne peux pas lui parler par message", score: { nothing: 0 } }
+    ]
+  },
+  {
+    question: "Quand tu l'appelles, est-ce qu'{{subj}} te répond vite ?",
+    answers: [
+      { text: "Oui, clairement", score: { love: 2 } },
+      { text: "De temps en temps", score: { friend: 1 } },
+      { text: "Non", score: { nothing: 2 } },
+      { text: "Je ne peux pas l'appeler'", score: { nothing: 0 } }
     ]
   },
   {
@@ -472,11 +506,6 @@ function subjm() {
   return "Iel"
 }
 
-function poss() {
-  if (gender === "elle") return "sa";
-  if (gender === "il") return "son";
-  return "ses";
-}
 
 function handleAnswer(score) {
   // sauvegarde la réponse
@@ -507,7 +536,6 @@ function showQuestion() {
   let text = q.question
     .replaceAll("{{subj}}", subj())
     .replaceAll("{{subjm}}", subjm())
-    .replaceAll("{{poss}}", poss());
 
 
   questionEl.textContent = text;
@@ -523,7 +551,6 @@ function showQuestion() {
   btn.textContent = a.text
     .replaceAll("{{subj}}", subj())
     .replaceAll("{{subjm}}", subjm())
-    .replaceAll("{{poss}}", poss());
 
   btn.onclick = () => handleAnswer(a.score);
   btn.classList.add("fade");
@@ -634,5 +661,3 @@ function restartQuiz() {
 
 </body>
 </html>
-
-
