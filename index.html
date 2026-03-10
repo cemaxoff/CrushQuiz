@@ -371,7 +371,7 @@ const questions = [
       { text: "Oui, clairement", score: { love: 2 } },
       { text: "De temps en temps", score: { friend: 1 } },
       { text: "Non", score: { nothing: 2 } },
-      { text: "Je ne peux pas l'appeler'", score: { nothing: 0 } }
+      { text: "Je ne peux pas l’appeler", score: { nothing: 0 } }
     ]
   },
   {
@@ -411,7 +411,7 @@ const questions = [
     answers: [
       { text: "{{subjm}} accepte avec enthousiasme", score: { love: 2 } },
       { text: "{{subjm}} accepte parfois", score: { friend: 1 } },
-      { text: "{{subjm}} évite ou décline", score: { nothing: 2 } }
+      { text: "{{subjm}} évite ou décline", score: { nothing: 2 } },
     ]
   },
   {
@@ -489,7 +489,7 @@ function goBack() {
 
 
 function g(elle, il, iel) {
-  if (gender === "elle") return "elle";
+  if (gender === "elle") return elle;
   if (gender === "il") return il;
   return iel;
 }
